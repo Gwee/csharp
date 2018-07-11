@@ -1,0 +1,13 @@
+/Volumes/GoogleDrive/My Drive/workspace/C#/EX2/EX2/EX2/bin/Debug/EX2.exe
+/Volumes/GoogleDrive/My Drive/workspace/C#/EX2/EX2/EX2/bin/Debug/EX2.pdb
+/Volumes/GoogleDrive/My Drive/workspace/C#/EX2/EX2/EX2/obj/x86/Debug/EX2.csprojResolveAssemblyReference.cache
+/Volumes/GoogleDrive/My Drive/workspace/C#/EX2/EX2/EX2/obj/x86/Debug/EX2.csproj.CoreCompileInputs.cache
+/Volumes/GoogleDrive/My Drive/workspace/C#/EX2/EX2/EX2/obj/x86/Debug/EX2.exe
+/Volumes/GoogleDrive/My Drive/workspace/C#/EX2/EX2/EX2/obj/x86/Debug/EX2.pdb
+C:\Users\guy\Google Drive\workspace\C#\EX2\EX2\EX2\bin\Debug\EX2.exe.config
+C:\Users\guy\Google Drive\workspace\C#\EX2\EX2\EX2\bin\Debug\EX2.exe
+C:\Users\guy\Google Drive\workspace\C#\EX2\EX2\EX2\bin\Debug\EX2.pdb
+C:\Users\guy\Google Drive\workspace\C#\EX2\EX2\EX2\obj\x86\Debug\EX2.csprojAssemblyReference.cache
+C:\Users\guy\Google Drive\workspace\C#\EX2\EX2\EX2\obj\x86\Debug\EX2.csproj.CoreCompileInputs.cache
+C:\Users\guy\Google Drive\workspace\C#\EX2\EX2\EX2\obj\x86\Debug\EX2.exe
+C:\Users\guy\Google Drive\workspace\C#\EX2\EX2\EX2\obj\x86\Debug\EX2.pdb

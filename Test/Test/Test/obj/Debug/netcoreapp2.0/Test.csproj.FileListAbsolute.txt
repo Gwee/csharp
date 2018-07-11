@@ -1,0 +1,11 @@
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/bin/Debug/netcoreapp2.0/Test.deps.json
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/bin/Debug/netcoreapp2.0/Test.runtimeconfig.json
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/bin/Debug/netcoreapp2.0/Test.runtimeconfig.dev.json
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/bin/Debug/netcoreapp2.0/Test.dll
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/bin/Debug/netcoreapp2.0/Test.pdb
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/obj/Debug/netcoreapp2.0/Test.csprojResolveAssemblyReference.cache
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/obj/Debug/netcoreapp2.0/Test.csproj.CoreCompileInputs.cache
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/obj/Debug/netcoreapp2.0/Test.AssemblyInfoInputs.cache
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/obj/Debug/netcoreapp2.0/Test.AssemblyInfo.cs
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/obj/Debug/netcoreapp2.0/Test.dll
+/Volumes/GoogleDrive/My Drive/workspace/C#/Test/Test/Test/obj/Debug/netcoreapp2.0/Test.pdb
