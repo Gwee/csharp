@@ -1,0 +1,29 @@
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\bin\Debug\solution1.exe.config
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\bin\Debug\solution1.exe
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\bin\Debug\solution1.pdb
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\obj\Debug\solution1.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\obj\Debug\solution1.Form1.resources
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\obj\Debug\solution1.Properties.Resources.resources
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\obj\Debug\solution1.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\obj\Debug\solution1.exe
+c:\users\user\documents\visual studio 2017\Projects\solution1\solution1\obj\Debug\solution1.pdb
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\bin\Debug\solution1.exe.config
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\bin\Debug\solution1.exe
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\bin\Debug\solution1.pdb
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\obj\Debug\solution1.csprojResolveAssemblyReference.cache
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\obj\Debug\solution1.Form1.resources
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\obj\Debug\solution1.Properties.Resources.resources
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\obj\Debug\solution1.csproj.GenerateResource.cache
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\obj\Debug\solution1.csproj.CoreCompileInputs.cache
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\obj\Debug\solution1.exe
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2\solution1\solution1\solution1\obj\Debug\solution1.pdb
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\bin\Debug\solution1.exe.config
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\bin\Debug\solution1.exe
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\bin\Debug\solution1.pdb
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.csprojResolveAssemblyReference.cache
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.Form1.resources
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.Properties.Resources.resources
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.csproj.GenerateResource.cache
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.csproj.CoreCompileInputs.cache
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.exe
+C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.pdb
