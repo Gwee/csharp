@@ -27,3 +27,13 @@ C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסבי�
 C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.csproj.CoreCompileInputs.cache
 C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.exe
 C:\Users\4yaro\Google Drive\Documents\מכללת נתניה\תכנות בסביבת חלונות\תרגול\2_win_forms\solution1\solution1\solution1\obj\Debug\solution1.pdb
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\bin\Debug\solution1.exe.config
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\bin\Debug\solution1.exe
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\bin\Debug\solution1.pdb
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.csprojAssemblyReference.cache
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.Form1.resources
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.Properties.Resources.resources
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.csproj.GenerateResource.cache
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.csproj.CoreCompileInputs.cache
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.exe
+Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.pdb

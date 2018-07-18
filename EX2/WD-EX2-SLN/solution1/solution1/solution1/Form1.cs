@@ -90,6 +90,7 @@ namespace solution1
                     catch (Exception)
                     {
                         MessageBox.Show("Please enter only numbers");
+                        //test2
                     }
 
                 }
