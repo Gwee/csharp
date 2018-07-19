@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckedListBox", "CheckedListBox.csproj", "{DE8552B1-7B32-4202-92FC-655B9D5EC42F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE8552B1-7B32-4202-92FC-655B9D5EC42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8552B1-7B32-4202-92FC-655B9D5EC42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8552B1-7B32-4202-92FC-655B9D5EC42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8552B1-7B32-4202-92FC-655B9D5EC42F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
