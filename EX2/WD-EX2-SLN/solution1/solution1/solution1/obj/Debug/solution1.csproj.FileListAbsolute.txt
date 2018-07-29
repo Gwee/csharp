@@ -37,3 +37,13 @@ Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solut
 Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.csproj.CoreCompileInputs.cache
 Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.exe
 Y:\School\Netanya College\Computer Science\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.pdb
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\bin\Debug\solution1.exe.config
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\bin\Debug\solution1.exe
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\bin\Debug\solution1.pdb
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.csprojAssemblyReference.cache
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.Form1.resources
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.Properties.Resources.resources
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.csproj.GenerateResource.cache
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.csproj.CoreCompileInputs.cache
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.exe
+C:\workspace\CSharp\EX2\WD-EX2-SLN\solution1\solution1\solution1\obj\Debug\solution1.pdb
