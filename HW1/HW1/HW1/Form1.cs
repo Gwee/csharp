@@ -83,28 +83,31 @@ namespace HW1
             
 
         }
+        private Boolean CheckWinState()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 1; j < 4; j++)
+                {
+                    if (Int32.Parse(btnArray[i,j-1].Text) > Int32.Parse(btnArray[i,j].Text))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         private void BtnClick(object sender, EventArgs e)
         {
             if (((Button)sender).TabIndex +1 == fucker.TabIndex || ((Button)sender).TabIndex - 1 == fucker.TabIndex || ((Button)sender).TabIndex + 4 == fucker.TabIndex || ((Button)sender).TabIndex -4 == fucker.TabIndex)
             {
-                //foreach (Control control in Controls)
-                //{
-                //if (control.TabIndex == ((Button)sender).TabIndex - 1)
-                //{
                 SwapWithHidden((Button)sender);
-                //}
+                if (CheckWinState())
+                {
+                    MessageBox.Show("Winner!");
+                }
             }
-            if (((Button)sender).TabIndex == 14 || ((Button)sender).TabIndex == 11)
-            {
-                //hiddenButton.Text = ((Button)sender).Text;
-                //hiddenButton.Visible = true;
-                //hiddenButton.BackColor = ((Button)sender).BackColor;
-                //hiddenButton.Name = ((Button)sender).Name;
 
-                //((Button)sender).Text = "";
-                //((Button)sender).Name= "hiddenButton";
-
-            }
         }
 
     }
