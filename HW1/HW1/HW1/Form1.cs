@@ -15,6 +15,7 @@ namespace HW1
         private int[,] numMtrx = new int[4,4];
         private Button[,] btnArray = new Button[4, 4];
         private Random rnd = new Random();
+        Button fucker;
         public Form1()
         {
             InitializeComponent();
@@ -49,7 +50,8 @@ namespace HW1
                     this.Controls.Add(btnArray[i, j]);
                 }
             }
-            HideButton(btnArray[3, 3]);
+            fucker = btnArray[3, 3];
+            HideButton(fucker);
         }
         private Boolean isNumInArr (int num)
         {
@@ -70,14 +72,27 @@ namespace HW1
             b.Visible = false;
             b.Tag = "hidden";
         }
+        private void SwapWithHidden(Button b)
+        {
+
+            HideButton(b);
+            fucker.Text = b.Text;
+            fucker.BackColor = b.BackColor;
+            fucker.Visible = true;
+            fucker = b;
+            
+
+        }
         private void BtnClick(object sender, EventArgs e)
         {
-            foreach (Control control in Controls)
+            if (((Button)sender).TabIndex +1 == fucker.TabIndex || ((Button)sender).TabIndex - 1 == fucker.TabIndex || ((Button)sender).TabIndex + 4 == fucker.TabIndex || ((Button)sender).TabIndex -4 == fucker.TabIndex)
             {
-                if (control.TabIndex == ((Button)sender).TabIndex - 1)
-                {
-                    MessageBox.Show("hi");
-                }
+                //foreach (Control control in Controls)
+                //{
+                //if (control.TabIndex == ((Button)sender).TabIndex - 1)
+                //{
+                SwapWithHidden((Button)sender);
+                //}
             }
             if (((Button)sender).TabIndex == 14 || ((Button)sender).TabIndex == 11)
             {
