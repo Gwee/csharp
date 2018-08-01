@@ -112,24 +112,46 @@ namespace HW1
             fucker.TabIndex = indx;
             SwapArray(b, fucker);
         }
-        private void SwapWithHiddenAnimate(Button b)
+        private void DisableButtons()
         {
-            timer1.Start();
-            Button temp = b;
-            int indx = b.TabIndex;
-            Point loc = new Point(b.Top, b.Left); ;
-            b.Location = new Point(fucker.Top, fucker.Left);
-            b.TabIndex = fucker.TabIndex;
-            fucker.Location = loc;
-            fucker.TabIndex = indx;
-            timer1.Stop();
-        }
-        private void AnimateThisShit(Button b, Point dest)
-        {
-            for (int i = 0; i < 40; i++)
+            foreach (Control c in this.Controls)
             {
-
+                    c.Enabled = false;
             }
+        }
+        private void EnableButtons()
+        {
+            foreach (Control c in this.Controls)
+            {
+                c.Enabled = true;
+            }
+        }
+        private void SwapWithHiddenAnimate(Button b, Timer t)
+        {
+            Point dest = new Point(fucker.Left, fucker.Top);
+            Point source = new Point(b.Left, b.Top);
+            Point temp = new Point(b.Left, b.Top);
+            //t = new Timer();
+            t.Interval = 1;
+            t.Tick += (object s, EventArgs e) => timer1_Tick(b,source, dest);
+            t.Enabled = true;
+            t.Start();
+            DisableButtons();
+            while (b.Location != fucker.Location)
+            {
+                b.Enabled = false;
+                Application.DoEvents();
+            }
+            EnableButtons();
+
+            t.Stop();
+            b.Enabled = true;
+            int indx = b.TabIndex;
+            
+            //b.Location = new Point(fucker.Top, fucker.Left);
+            b.TabIndex = fucker.TabIndex;
+            fucker.Location = temp;
+            fucker.TabIndex = indx;
         }
         private Boolean CheckWinState()
         {
@@ -155,6 +177,9 @@ namespace HW1
                     {
                         MessageBox.Show("Game is not winnable");
                         //this.Close();  pop up the Game Over screen with message not winnable
+                        
+                        GameOver();
+
                     }
                 }
                 else
@@ -171,25 +196,59 @@ namespace HW1
                 return false;
             }
         }
+        private void GameOver()
+        {
+            DialogResult dialogResult = MessageBox.Show("New Game?", "Game Over!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do nothing
+                Environment.Exit(0);
+            }
+        }
         private void BtnClick(object sender, EventArgs e)
         {
+            Timer timer1 = new Timer();
             if (((Button)sender).TabIndex +1 == fucker.TabIndex || ((Button)sender).TabIndex - 1 == fucker.TabIndex || ((Button)sender).TabIndex + 4 == fucker.TabIndex || ((Button)sender).TabIndex -4 == fucker.TabIndex)
             {
+                SwapWithHiddenAnimate((Button)sender,timer1);
                 //SwapWithHidden((Button)sender);
-                SwapWithHidden((Button)sender);
 
                 if (CheckWinState())
                 {
-                    MessageBox.Show("Winner!");
+                    GameOver();
                 }
             }
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender,Point source, Point dest)
         {
-            MessageBox.Show("tick fucker");
-            Console.WriteLine("tick");
+
+            Button b = ((Button)sender);
+            Point p = b.Location;
+            if(source.X < dest.X)
+            {
+                p.X++;
+            }
+            if(source.Y < dest.Y)
+            {
+                p.Y++;
+            }
+            if (source.X > dest.X)
+            {
+                p.X--;
+            }
+            if (source.Y > dest.Y)
+            {
+                p.Y--;
+            }
+
+            b.Location = p;
         }
     }
 }
