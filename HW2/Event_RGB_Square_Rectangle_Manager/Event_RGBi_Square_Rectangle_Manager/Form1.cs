@@ -14,7 +14,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
     {
         public UserControl1[] arrUC = new UserControl1[2];
         public Control ButtonLabel_MinMax_RectangleSquare_control = null;
-
+        private List<Control> controlList= new List<Control>();
         public Form1(string ButtonLabel, string MinMax, string RectangleSquare)
         {
             InitializeComponent();
@@ -36,7 +36,25 @@ namespace Event_RGBi_Square_Rectangle_Manager
             ButtonLabel_MinMax_RectangleSquare_control.BackColor = Color.White;
             ButtonLabel_MinMax_RectangleSquare_control.Location = new Point(2, 60);
             this.Controls.Add(ButtonLabel_MinMax_RectangleSquare_control);
+            arrUC[0].myEvent += new myDelegate(fromUserControl);
+            arrUC[1].myEvent += new myDelegate(fromUserControl);
         }
+        private string getControlColor()
+        {
+            if (radioButtonRed.Checked) { return "Red"; }
+            if (radioButtonGreen.Checked) { return "Green"; }
+            else { return "Blue"; }
+            
+
+        }
+        private void fromUserControl(object sender, myEventArgs e)
+        {
+            foreach (Control control in e.arrControls)
+            {
+                //if (control.BackColor) == getControlColor )
+            }
+        }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

@@ -32,11 +32,13 @@
             // 
             // UserControl1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(1100, 80);
+            this.Size = new System.Drawing.Size(1650, 123);
+            this.Load += new System.EventHandler(this.UserControl1_Load);
             this.Click += new System.EventHandler(this.UserControl1_Click);
             this.ResumeLayout(false);
 

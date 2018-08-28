@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Event_RGBi_Square_Rectangle_Manager
 {
     public class myEventArgs : EventArgs
     {
+        public Control[] arrControls;
+        public myEventArgs(Control[] tControls)
+        {
+            arrControls = tControls;
+        }
     }
 }

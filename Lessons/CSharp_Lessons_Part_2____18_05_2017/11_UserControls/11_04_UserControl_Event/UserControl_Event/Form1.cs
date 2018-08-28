@@ -23,6 +23,11 @@ namespace UserControl_Event
         private void myFunction(object sender, myEventArgs e)
         {
             label1.Text = "Hello, " + e.myString + " !";
-        }    
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
