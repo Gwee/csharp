@@ -39,19 +39,24 @@ namespace Event_RGBi_Square_Rectangle_Manager
             arrUC[0].myEvent += new myDelegate(fromUserControl);
             arrUC[1].myEvent += new myDelegate(fromUserControl);
         }
-        private string getControlColor()
+        private Color getControlColor()
         {
-            if (radioButtonRed.Checked) { return "Red"; }
-            if (radioButtonGreen.Checked) { return "Green"; }
-            else { return "Blue"; }
+            if (radioButtonRed.Checked) { return Color.FromName("Red"); }
+            if (radioButtonGreen.Checked) { return Color.FromName("Green"); }
+            else { return Color.FromName("Blue"); }
             
 
         }
+        // need to go over both user controls, currently only one
         private void fromUserControl(object sender, myEventArgs e)
         {
             foreach (Control control in e.arrControls)
             {
-                //if (control.BackColor) == getControlColor )
+                    //TODO: add to if, fis shape == rect/square?
+                if (control.BackColor == getControlColor() && control.GetType().Name == this.Text)
+                {
+                    //switch case call and create isMin and isMax function by comparing Size.Width and Size.Height and save the relevant one to temp control to be returned as result
+                }
             }
         }
 

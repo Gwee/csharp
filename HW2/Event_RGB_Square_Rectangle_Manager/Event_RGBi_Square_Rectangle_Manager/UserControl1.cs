@@ -56,11 +56,11 @@ namespace Event_RGBi_Square_Rectangle_Manager
 
         private void UserControl1_Click(object sender, EventArgs e)
         {
-            foreach (Control control in arrControls)
+            myEventArgs temp = new myEventArgs(arrControls);
+            if (myEvent != null)
             {
-
+                myEvent(this, temp);
             }
-            //myEventArgs temp = new myEventArgs();
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
