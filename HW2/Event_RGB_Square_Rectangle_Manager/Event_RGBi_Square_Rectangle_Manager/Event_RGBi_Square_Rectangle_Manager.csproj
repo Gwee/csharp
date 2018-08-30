@@ -58,6 +58,9 @@
     <Compile Include="Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
+    <Compile Include="myControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="myEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
