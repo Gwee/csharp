@@ -58,7 +58,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
                 return ShapeType.Rectangle;
             }
         }
-        private ShapeType isControlSquare(Control control)
+        private ShapeType getControlShapeType(Control control)
         {
             if (control.Height == control.Width)
             {
@@ -72,12 +72,12 @@ namespace Event_RGBi_Square_Rectangle_Manager
 
         //TODO: add try to take care of empty lists
         //TODO: check that rectangles work
-        private Control getMinControl(List<myControl> controls)
+        private myControl getMinControl(List<myControl> controls)
         {
             var a = controls.OrderBy(c => c.myHeight*c.myWidth).First();//Max(ctr1 => ctr1.myHeight);
             return a;
         }
-        private Control getMaxControl(List<myControl> controls)
+        private myControl getMaxControl(List<myControl> controls)
         {
             var a = controls.OrderByDescending(c => c.myHeight*c.myWidth).First();//Max(ctr1 => ctr1.myHeight);
             return a;
@@ -88,22 +88,62 @@ namespace Event_RGBi_Square_Rectangle_Manager
             foreach (Control control in e.arrControls)
             {
                     //TODO: add to if, fis shape == rect/square?
-                if (control.BackColor == getSelectedColor() && control.GetType().Name == this.Text && isControlSquare(control) == getSelectedShapeType())
+                if (control.BackColor == getSelectedColor() && control.GetType().Name == this.Text && getControlShapeType(control) == getSelectedShapeType())
                 {
                     controlList.Add(new myControl(control.BackColor, control.GetType(), control.Width, control.Height));
                     
                 }
             }
+
+
                     switch (Min_Max_label.Text)
                     {
                         case "Min":
-                    Control min = getMinControl(controlList);
-                    ButtonLabel_MinMax_RectangleSquare_control = min;
-                            break;
-                        case "Max":
-                    Control max = getMaxControl(controlList);
-                    ButtonLabel_MinMax_RectangleSquare_control = max;
+                    myControl min = getMinControl(controlList);
+                    if (min.myType.Name == "Label")
+                    {
+                        Label newLbl = min.convertToLabel();
+                    newLbl.Location = ButtonLabel_MinMax_RectangleSquare_control.Location;
+                    Controls.Remove(ButtonLabel_MinMax_RectangleSquare_control);
+                    this.Controls.Add(newLbl);
+                    newLbl.Visible = true;
+                    ButtonLabel_MinMax_RectangleSquare_control = newLbl;
+                        controlList.Clear();
+                    }
+                    else
+                    {
+                        Button newBtn = min.convertToButton();
+                        newBtn.Location = ButtonLabel_MinMax_RectangleSquare_control.Location;
+                        Controls.Remove(ButtonLabel_MinMax_RectangleSquare_control);
+                        this.Controls.Add(newBtn);
+                        newBtn.Visible = true;
+                        ButtonLabel_MinMax_RectangleSquare_control = newBtn;
+                        controlList.Clear();
 
+                    }
+                    break;
+                        case "Max":
+                    myControl max = getMaxControl(controlList);
+                    if (max.myType.Name == "Label")
+                    {
+                        Label newLbl = max.convertToLabel();
+                        newLbl.Location = ButtonLabel_MinMax_RectangleSquare_control.Location;
+                        Controls.Remove(ButtonLabel_MinMax_RectangleSquare_control);
+                        this.Controls.Add(newLbl);
+                        newLbl.Visible = true;
+                        controlList.Clear();
+
+                    }
+                    else
+                    {
+                        Button newBtn = max.convertToButton();
+                        newBtn.Location = ButtonLabel_MinMax_RectangleSquare_control.Location;
+                        Controls.Remove(ButtonLabel_MinMax_RectangleSquare_control);
+                        this.Controls.Add(newBtn);
+                        newBtn.Visible = true;
+                        controlList.Clear();
+
+                    }
                     break;
                         default:
                             break;

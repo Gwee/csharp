@@ -16,8 +16,8 @@ namespace Event_RGBi_Square_Rectangle_Manager
     public class myControl : Control
     {
         private Color myColor;
-        private Type myType;
-        private ShapeType shapeType;
+        public Type myType { get; }
+        public ShapeType shapeType { get; }
         public int myWidth { get; }
         public int myHeight { get; }
 
@@ -30,6 +30,22 @@ namespace Event_RGBi_Square_Rectangle_Manager
             if (myWidth == myHeight) {
                 this.shapeType = ShapeType.Square;
             }
+        }
+        public Label convertToLabel()
+        {
+            Label retLbl = new Label();
+            retLbl.BackColor = myColor;
+            retLbl.Width = myWidth;
+            retLbl.Height = myHeight;
+            return retLbl;
+        }
+        public Button convertToButton()
+        {
+            Button retBtn = new Button();
+            retBtn.BackColor = myColor;
+            retBtn.Width = myWidth;
+            retBtn.Height = myHeight;
+            return retBtn;
         }
 
     }
