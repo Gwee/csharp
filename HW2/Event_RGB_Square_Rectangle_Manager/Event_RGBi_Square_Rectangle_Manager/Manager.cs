@@ -41,5 +41,6 @@ namespace Event_RGBi_Square_Rectangle_Manager
             myForm_2 = new Form1(ButtonLabel2, MinMax2, RectangleSquare2);
             myForm_2.Show();
         }
+
     }
 }

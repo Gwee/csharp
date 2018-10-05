@@ -71,23 +71,39 @@ namespace Event_RGBi_Square_Rectangle_Manager
         }
 
         //TODO: add try to take care of empty lists
-        //TODO: check that rectangles work
+
         private myControl getMinControl(List<myControl> controls)
         {
-            var a = controls.OrderBy(c => c.myHeight*c.myWidth).First();//Max(ctr1 => ctr1.myHeight);
+            myControl a =null;
+            try
+            {
+                a = controls.OrderBy(c => c.myHeight*c.myWidth).First();
+            }
+            catch (System.InvalidOperationException)
+            {
+
+                Console.WriteLine("Missing control");
+            }
             return a;
         }
         private myControl getMaxControl(List<myControl> controls)
         {
-            var a = controls.OrderByDescending(c => c.myHeight*c.myWidth).First();//Max(ctr1 => ctr1.myHeight);
+            myControl a = null;
+            try
+            {
+                a = controls.OrderByDescending(c => c.myHeight * c.myWidth).First();
+            }
+            catch (System.InvalidOperationException)
+            {
+
+                Console.WriteLine("Missing control");
+            }
             return a;
         }
-        //TODO: need to go over both user controls, currently only one
         private void fromUserControl(object sender, myEventArgs e)
         {
             foreach (Control control in e.arrControls)
             {
-                    //TODO: add to if, fis shape == rect/square?
                 if (control.BackColor == getSelectedColor() && control.GetType().Name == this.Text && getControlShapeType(control) == getSelectedShapeType())
                 {
                     controlList.Add(new myControl(control.BackColor, control.GetType(), control.Width, control.Height));
@@ -95,11 +111,18 @@ namespace Event_RGBi_Square_Rectangle_Manager
                 }
             }
 
-
+            //TODO: Fix this ugly code
                     switch (Min_Max_label.Text)
                     {
                         case "Min":
                     myControl min = getMinControl(controlList);
+                    if (min==null)
+                    {
+                        MessageBox.Show("No minimum control found");
+                        break;
+                    }
+
+ 
                     if (min.myType.Name == "Label")
                     {
                         Label newLbl = min.convertToLabel();
@@ -124,6 +147,11 @@ namespace Event_RGBi_Square_Rectangle_Manager
                     break;
                         case "Max":
                     myControl max = getMaxControl(controlList);
+                    if (max == null)
+                    {
+                        MessageBox.Show("No minimum control found");
+                        break;
+                    }
                     if (max.myType.Name == "Label")
                     {
                         Label newLbl = max.convertToLabel();
