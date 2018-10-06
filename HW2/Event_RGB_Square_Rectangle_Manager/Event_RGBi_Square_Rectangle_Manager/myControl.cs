@@ -12,6 +12,10 @@ namespace Event_RGBi_Square_Rectangle_Manager
     {
         Square, Rectangle
     }
+    public enum ShapeSize
+    {
+        Min, Max
+    }
 
     public class myControl : Control
     {

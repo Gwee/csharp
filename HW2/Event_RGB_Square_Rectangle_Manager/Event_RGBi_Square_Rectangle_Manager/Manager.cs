@@ -37,9 +37,42 @@ namespace Event_RGBi_Square_Rectangle_Manager
             }
 
             myForm_1 = new Form1(ButtonLabel1, MinMax1, RectangleSquare1);
+            myForm_1.UCEvent += new myDelegate(FromFormTrigger);
             myForm_1.Show();
             myForm_2 = new Form1(ButtonLabel2, MinMax2, RectangleSquare2);
+            myForm_2.UCEvent += new myDelegate(FromFormTrigger);
             myForm_2.Show();
+        }
+        private void FromFormTrigger (object sender, myEventArgs e)
+        {
+            Form triggeredForm = (Form)sender;
+            Form form;
+            List<Control> AllControls = new List<Control>();
+            List<Control> RetControls = new List<Control>();
+
+            if (triggeredForm == myForm_1)
+            {
+                form = myForm_2;
+            }
+            else
+            {
+                form = myForm_1;
+            }
+            AllControls = Utils.Helper.getAllControls(triggeredForm, form);
+
+            foreach (UserControl uc in AllControls)
+            {
+                foreach (Control control in uc.Controls)
+                {
+                    if (control.BackColor == Color.FromName(Utils.Helper.getColor(triggeredForm).Text) && control.GetType().Name == triggeredForm.Text && Utils.Helper.getControlShapeType(control) == Utils.Helper.getSelectedShapeType(triggeredForm))
+                    {
+                        RetControls.Add(new myControl(control.BackColor, control.GetType(), control.Width, control.Height));
+                        //Console.WriteLine(control.Name);
+                    }
+                }
+            }
+            e.uc.BackColor = Color.Blue;
+            Console.WriteLine("hi");
         }
 
     }

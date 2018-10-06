@@ -15,6 +15,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
         public UserControl1[] arrUC = new UserControl1[2];
         public Control ButtonLabel_MinMax_RectangleSquare_control = null;
         private List<myControl> controlList= new List<myControl>();
+        public myDelegate UCEvent;
         public Form1(string ButtonLabel, string MinMax, string RectangleSquare)
         {
             InitializeComponent();
@@ -36,8 +37,8 @@ namespace Event_RGBi_Square_Rectangle_Manager
             ButtonLabel_MinMax_RectangleSquare_control.BackColor = Color.White;
             ButtonLabel_MinMax_RectangleSquare_control.Location = new Point(2, 60);
             this.Controls.Add(ButtonLabel_MinMax_RectangleSquare_control);
-            arrUC[0].myEvent += new myDelegate(fromUserControl);
-            arrUC[1].myEvent += new myDelegate(fromUserControl);
+            arrUC[0].myEvent += new myDelegate(fromUserControl1);
+            arrUC[1].myEvent += new myDelegate(fromUserControl1);
         }
         private Color getSelectedColor()
         {
@@ -99,6 +100,14 @@ namespace Event_RGBi_Square_Rectangle_Manager
                 Console.WriteLine("Missing control");
             }
             return a;
+        }
+        private void fromUserControl1(object sender, myEventArgs e)
+        {
+            myEventArgs temp = new myEventArgs(e.uc, this);
+            if (UCEvent != null)
+            {
+                UCEvent(this, temp);
+            }
         }
         private void fromUserControl(object sender, myEventArgs e)
         {
