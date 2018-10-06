@@ -47,7 +47,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
         {
             Form triggeredForm = (Form)sender;
             Form form;
-            List<Control> AllControls = new List<Control>();
+            List<Control> UserControls = new List<Control>();
             List<Control> RetControls = new List<Control>();
 
             if (triggeredForm == myForm_1)
@@ -58,9 +58,9 @@ namespace Event_RGBi_Square_Rectangle_Manager
             {
                 form = myForm_1;
             }
-            AllControls = Utils.Helper.getAllControls(triggeredForm, form);
+            UserControls = Utils.Helper.getAllUserControls(triggeredForm, form);
 
-            foreach (UserControl uc in AllControls)
+            foreach (UserControl uc in UserControls)
             {
                 foreach (Control control in uc.Controls)
                 {

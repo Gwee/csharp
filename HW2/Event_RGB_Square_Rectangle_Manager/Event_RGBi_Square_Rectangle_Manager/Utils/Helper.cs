@@ -80,7 +80,7 @@ namespace Event_RGBi_Square_Rectangle_Manager.Utils
             return a;
         }
 
-        internal static List<Control> getAllControls(Form triggeredForm, Form form)
+        internal static List<Control> getAllUserControls(Form triggeredForm, Form form)
         {
             List<Control> retList = new List<Control>();
             retList.AddRange(triggeredForm.Controls.OfType<UserControl>().DefaultIfEmpty().ToArray<UserControl>());
