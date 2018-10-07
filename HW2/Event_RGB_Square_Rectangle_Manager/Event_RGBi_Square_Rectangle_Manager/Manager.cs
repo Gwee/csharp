@@ -48,7 +48,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
             Form triggeredForm = (Form)sender;
             Form form;
             List<Control> UserControls = new List<Control>();
-            List<Control> RetControls = new List<Control>();
+            List<myControl> RetControls = new List<myControl>();
 
             if (triggeredForm == myForm_1)
             {
@@ -73,6 +73,19 @@ namespace Event_RGBi_Square_Rectangle_Manager
             }
             e.uc.BackColor = Color.Blue;
             Console.WriteLine("hi");
+            Control repl = triggeredForm.Controls.Find("ButtonLabel_MinMax_RectangleSquare_control", false).Single();
+            switch (Utils.Helper.getMinMax(triggeredForm))
+            {
+                case ShapeSize.Min:
+                    Utils.Helper.placeMinControlInForm(triggeredForm, RetControls, repl);
+                    break;
+                case ShapeSize.Max:
+                    Utils.Helper.placeMaxControlInForm(triggeredForm, RetControls, repl);
+                    break;
+                default:
+                    break;
+            }
+            //Utils.Helper.placeMinMaxControlInForm(triggeredForm, RetControls, Utils.Helper.getMinMax(triggeredForm));
         }
 
     }

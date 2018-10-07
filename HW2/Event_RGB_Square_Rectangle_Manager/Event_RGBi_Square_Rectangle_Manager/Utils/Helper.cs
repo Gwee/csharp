@@ -28,13 +28,24 @@ namespace Event_RGBi_Square_Rectangle_Manager.Utils
         public static ShapeType getSelectedShapeType(Form form)
         {
 
-            if (form.Controls.Find("Rectangle_Square_label",false).Single().Text == "Square")
+            if (form.Controls.Find("Rectangle_Square_label", false).Single().Text == "Square")
             {
                 return ShapeType.Square;
             }
             else
             {
                 return ShapeType.Rectangle;
+            }
+        }
+        public static ShapeSize getMinMax(Form form)
+        {
+            if (form.Controls.Find("Min_Max_label", false).Single().Text == "Min")
+            {
+                return ShapeSize.Min;
+            }
+            else
+            {
+                return ShapeSize.Max;
             }
         }
         public static ShapeType getControlShapeType(Control control)
@@ -86,6 +97,56 @@ namespace Event_RGBi_Square_Rectangle_Manager.Utils
             retList.AddRange(triggeredForm.Controls.OfType<UserControl>().DefaultIfEmpty().ToArray<UserControl>());
             retList.AddRange(form.Controls.OfType<UserControl>().DefaultIfEmpty().ToArray<UserControl>());
             return retList;
+        }
+
+        internal static void placeMinControlInForm(Form triggeredForm, List<myControl> retControls, Control toReplace)
+        {
+            toReplace.Visible = false;
+            myControl minControl = getMinControl(retControls);
+            if (toReplace is Label)
+            {
+                Label newLbl = minControl.convertToLabel();
+                newLbl.Location = toReplace.Location;
+                triggeredForm.Controls.Remove(minControl);
+                newLbl.Name = "ButtonLabel_MinMax_RectangleSquare_control";
+                triggeredForm.Controls.Add(newLbl);
+                newLbl.Visible = true;
+            }
+            else
+            {
+                Button newBtn = minControl.convertToButton();
+                newBtn.Location = toReplace.Location;
+                triggeredForm.Controls.Remove(minControl);
+                newBtn.Name = "ButtonLabel_MinMax_RectangleSquare_control";
+                triggeredForm.Controls.Add(newBtn);
+                newBtn.Visible = true;
+            }
+            triggeredForm.Controls.Remove(toReplace);
+        }
+
+        internal static void placeMaxControlInForm(Form triggeredForm, List<myControl> retControls, Control toReplace)
+        {
+            toReplace.Visible = false;
+            myControl maxControl = getMaxControl(retControls);
+            if (toReplace is Label)
+            {
+                Label newLbl = maxControl.convertToLabel();
+                newLbl.Location = toReplace.Location;
+                triggeredForm.Controls.Remove(maxControl);
+                newLbl.Name = "ButtonLabel_MinMax_RectangleSquare_control";
+                triggeredForm.Controls.Add(newLbl);
+                newLbl.Visible = true;
+            }
+            else
+            {
+                Button newBtn = maxControl.convertToButton();
+                newBtn.Location = toReplace.Location;
+                triggeredForm.Controls.Remove(maxControl);
+                newBtn.Name = "ButtonLabel_MinMax_RectangleSquare_control";
+                triggeredForm.Controls.Add(newBtn);
+                newBtn.Visible = true;
+            }
+            triggeredForm.Controls.Remove(toReplace);
         }
     }
 }

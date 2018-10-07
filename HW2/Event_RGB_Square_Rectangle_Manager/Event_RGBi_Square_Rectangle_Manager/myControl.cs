@@ -17,6 +17,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
         Min, Max
     }
 
+
     public class myControl : Control
     {
         private Color myColor;
@@ -24,6 +25,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
         public ShapeType shapeType { get; }
         public int myWidth { get; }
         public int myHeight { get; }
+        public ShapeSize shapeSize {get;}
 
         public myControl (Color color, Type type, int width, int height)
         {
@@ -35,6 +37,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
                 this.shapeType = ShapeType.Square;
             }
         }
+
         public Label convertToLabel()
         {
             Label retLbl = new Label();

@@ -36,6 +36,7 @@ namespace Event_RGBi_Square_Rectangle_Manager
             ButtonLabel_MinMax_RectangleSquare_control.Size = new Size(20, 20);
             ButtonLabel_MinMax_RectangleSquare_control.BackColor = Color.White;
             ButtonLabel_MinMax_RectangleSquare_control.Location = new Point(2, 60);
+            ButtonLabel_MinMax_RectangleSquare_control.Name = "ButtonLabel_MinMax_RectangleSquare_control";
             this.Controls.Add(ButtonLabel_MinMax_RectangleSquare_control);
             arrUC[0].myEvent += new myDelegate(fromUserControl1);
             arrUC[1].myEvent += new myDelegate(fromUserControl1);
