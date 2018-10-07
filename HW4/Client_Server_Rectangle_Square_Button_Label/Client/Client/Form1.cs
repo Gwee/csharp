@@ -19,7 +19,6 @@ namespace Client
     {
         private Control[] arrControls;
         private ICommon myICommon;
-
         private Control[] arrControls_result = null;
 
         private string ButtonLabel = "";
@@ -98,10 +97,68 @@ namespace Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            List<myControl> ControlList = new List<myControl>();
+            foreach (Control control in arrControls)
+            {
+                ControlList.Add(new myControl(control.GetType().Name, control.BackColor.Name, getShape(control),control.Height,control.Width));
+            }
+            myControl[] myControlArray = ControlList.ToArray();
+            myICommon.AddControlsToServer(myControlArray);
         }
 
+        private void GetControlsFromServer()
+        {
+            myControl[] temp = myICommon.CommonControls();
+            List<Control> arrControls_resultList = new List<Control>();
+            Control control;
+            foreach (var mc in temp)
+            {
+                if (mc.Type == "Label")
+                {
+                    control = new Label();
+                }
+                else
+                {
+                    control = new Button();
+                }
+                control.BackColor = Color.FromName(mc.Color);
+                control.Width = mc.Width;
+                control.Height = mc.Height;
+                arrControls_resultList.Add(control);
+            }
+            arrControls_result = arrControls_resultList.ToArray();
+            Console.WriteLine("test");
+            ShowResultControls();
+        }
+        private String getShape(Control c)
+        {
+            if (c.Height == c.Width)
+            {
+                return "Square";
+            }
+            else
+            {
+                return "Rectangle";
+            }
+        }
+        private void ShowResultControls()
+        {
+            int currPosition = 2;
+            foreach (Control control in arrControls_result)
+            {
+                if (control.BackColor == Color.FromName(ClientColor.Text) && control.GetType().Name == ButtonLabel && getShape(control) == RectangleSquare )
+                {
+                    control.Location = new Point(currPosition, 100);
+                    currPosition += control.Size.Width + 2;
+                    this.Controls.Add(control);
+                    control.Visible = true;
+                }
+            }
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //fix this (if prevCounter = servers prev, server returns null else, update arrControls_result
+            GetControlsFromServer();
         }
     }
 }
