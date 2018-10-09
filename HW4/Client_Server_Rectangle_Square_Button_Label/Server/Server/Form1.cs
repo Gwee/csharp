@@ -37,24 +37,14 @@ namespace Server
             ConvertMyControlArrayToControlList(controlList);
         }
 
-        public myControl[] CommonControls()
+
+
+        private myControl convertControlToMyControl(Control control)
         {
-            return ConvertControlListToMyControlArray();
+            return new myControl(control.GetType().Name, control.BackColor.Name, getShape(control), control.Height, control.Width);
         }
 
-        public myControl[] ConvertControlListToMyControlArray()
-        {
-            myControl[] mcArray = new myControl[ControlList.Count];
-            int i = 0;
-            foreach (Control control in ControlList)
-            {
-                mcArray[i] = new myControl(control.GetType().Name, control.BackColor.Name, getShape(control), control.Height, control.Width);
-                i++;
-            }
-            return mcArray;
-        }
-
-        private String getShape(Control c)
+        public static String getShape(Control c)
         {
             if (c.Height == c.Width)
             {
@@ -84,6 +74,28 @@ namespace Server
                 control.Width = mc.Width;
                 control.Height = mc.Height;
                 ControlList.Add(control);
+            }
+        }
+
+        public myControl[] GetResultControls(int prevCounter, Color controlColor, string controlType, string controlShape)
+        {
+            List<myControl> retList = new List<myControl>();
+            foreach (Control control in ControlList)
+            {
+                if (control.BackColor == controlColor && control.GetType().Name == controlType && getShape(control) == controlShape)
+                {
+                    retList.Add(convertControlToMyControl(control));
+                }
+
+            }
+            myControl[] myControlResult = retList.ToArray();
+            if (prevCounter == myControlResult.Length)
+            {
+                return null;
+            }
+            else
+            {
+                return myControlResult;
             }
         }
     }

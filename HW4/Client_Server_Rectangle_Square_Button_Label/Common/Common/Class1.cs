@@ -11,9 +11,11 @@ namespace Common
     {
         //Should be done with <T>
         void AddControlsToServer(myControl[] controlList);
-        myControl[] ConvertControlListToMyControlArray();
+
         void ConvertMyControlArrayToControlList(myControl[] mcArray);
-        myControl[] CommonControls();
+
+        myControl[] GetResultControls(int prevCounter, Color controlColor, String controlType, String controlShape);
+
         
     }
     [Serializable]

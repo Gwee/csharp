@@ -106,12 +106,13 @@ namespace Client
             myICommon.AddControlsToServer(myControlArray);
         }
 
-        private void GetControlsFromServer()
+        private void GetControlsFromServer(myControl[] mcArray)
         {
-            myControl[] temp = myICommon.CommonControls();
+            //myControl[] result = myICommon.GetResultControls(prevCounter, Color.FromName(ClientColor.Text), ButtonLabel, RectangleSquare);
+            //myControl[] mcArray = myICommon.CommonControls();
             List<Control> arrControls_resultList = new List<Control>();
             Control control;
-            foreach (var mc in temp)
+            foreach (var mc in mcArray)
             {
                 if (mc.Type == "Label")
                 {
@@ -127,7 +128,6 @@ namespace Client
                 arrControls_resultList.Add(control);
             }
             arrControls_result = arrControls_resultList.ToArray();
-            Console.WriteLine("test");
             ShowResultControls();
         }
         private String getShape(Control c)
@@ -144,6 +144,7 @@ namespace Client
         private void ShowResultControls()
         {
             int currPosition = 2;
+
             foreach (Control control in arrControls_result)
             {
                 if (control.BackColor == Color.FromName(ClientColor.Text) && control.GetType().Name == ButtonLabel && getShape(control) == RectangleSquare )
@@ -158,7 +159,12 @@ namespace Client
         private void timer1_Tick(object sender, EventArgs e)
         {
             //fix this (if prevCounter = servers prev, server returns null else, update arrControls_result
-            GetControlsFromServer();
+            myControl[] temp = myICommon.GetResultControls(prevCounter, Color.FromName(ClientColor.Text), ButtonLabel, RectangleSquare);
+            if ( temp != null)
+            {
+                GetControlsFromServer(temp);
+                prevCounter = temp.Length;
+            }
         }
     }
 }
