@@ -29,12 +29,31 @@ namespace RGB_ButtonsLabels_Transports_UserControls
         private int[] arrIndex_Transport =  { 0, 0, 0 };
         private int[] arrIndex_To =  { 0, 0, 0 };
 
-private AutoResetEvent[] arrAutoResetEvent_1 = new AutoResetEvent[3], arrAutoResetEvent_2 = new AutoResetEvent[3];
+private AutoResetEvent[] arrAutoResetEvent_1 = new AutoResetEvent[3],
+                         arrAutoResetEvent_2 = new AutoResetEvent[3];
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < arrAutoResetEvent_1.Count(); i++)
+            {
+                arrAutoResetEvent_1[i] = new AutoResetEvent(false);
+            }
+            for (int i = 0; i < arrAutoResetEvent_2.Count(); i++)
+            {
+                arrAutoResetEvent_2[i] = new AutoResetEvent(false);
+            }
+            for (int i = 0; i < arr_toTransport.Count(); i++)
+            {
+                arr_toTransport[i] = new Thread(toTransport_Function);
+                arr_toTransport[i].Start(i);
+            }
+            for (int i = 0; i < arr_fromTransport.Count(); i++)
+            {
+                arr_fromTransport[i] = new Thread(fromTransport_Function);
+                arr_fromTransport[i].Start(i);
+            }
         }
+
 
         public Form1()
         {
@@ -61,8 +80,38 @@ private AutoResetEvent[] arrAutoResetEvent_1 = new AutoResetEvent[3], arrAutoRes
 
         void toTransport_Function(object o)
         {
+            int threadID = (int)o;
+            int counter = 0;
+            string controlType = arrTypes[threadID];
+            string controlColor = arrColors[arrIndex_Color[threadID]];
+            UserControl1 transport = arrUC_Transport[threadID];
 
-        }
+            var clonedControls = UC_From.Controls.Clone();
+
+            while (true)
+            {
+                Thread.Sleep(50);
+                foreach (Control control in clonedControls)
+                {
+                    if (control.GetType().Name == controlType && control.BackColor.Name == controlColor)
+                    {
+                        counter++;
+                        this.Invoke(new myDelegate(add),new object[] { transport, threadID , control});
+                        this.Invoke(new myDelegate(remove), new object[] { UC_From, threadID, control });
+                    }
+                    if (counter == N_Trasport)
+                    {
+                        counter = 0;
+
+                        if (controlType == "Button") { arrAutoResetEvent_2[0].Set(); arrAutoResetEvent_1[0].WaitOne(); }
+                        if (controlType == "Label") { arrAutoResetEvent_2[1].Set(); arrAutoResetEvent_1[1].WaitOne(); }
+                        if (controlType == "TextBox") { arrAutoResetEvent_2[2].Set(); arrAutoResetEvent_1[2].WaitOne(); }
+                    }
+                }
+                arrIndex_Color[threadID]++;//get next color
+                }
+            }
+            
 
         void fromTransport_Function(object o)
         {
@@ -71,12 +120,14 @@ private AutoResetEvent[] arrAutoResetEvent_1 = new AutoResetEvent[3], arrAutoRes
 
         private void add(UserControl1 UC, int index, Control C)
         {
-
+            int pos = UC.Controls.Count;
+            C.Location = new Point(3 + 31 * pos, 0);
+            UC.Controls.Add(C);
+            UC.Refresh();
         }
         private void remove(UserControl1 UC, int index, Control C)
         {
      
         }
-
     }
 }
